@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Star Trends</title>
+    <link rel="stylesheet" type="text/css" href="vis.min.css"/>
+    <style>
+        .avatar {
+            width: 32px;
+            height: 32px;
+        }
+    </style>
 </head>
 <body>
-
+<form class="pure-form">
+    <fieldset>
+        <label>
+            Repo Name:
+            <input style="width: 50%" id="name" value="cnodejs/nodeclub/">
+        </label>
+        <button id="btn" class="pure-button pure-button-primary" onclick="show();return false;">Show Trends</button>
+    </fieldset>
+</form>
+<div id="graph2d"></div>
+<div id="timeline"></div>
 </body>
+<script src="vis.min.js"></script>
+<script src="app.js"></script>
 </html>
