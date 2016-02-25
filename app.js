@@ -1,7 +1,3 @@
-/**
- * Created by yan on 16-2-25.
- */
-
 (function () {
 
   var nameElement = document.getElementById('name');
@@ -22,15 +18,14 @@
     if (e.byUser) {
       timeline.setWindow(e.start, e.end)
     }
-  })
-
+  });
   timeline.on('rangechanged', function (e) {
     if (e.byUser) {
       graph2d.setWindow(e.start, e.end)
     }
-  })
-  var worker = new Worker('worker.js');
+  });
 
+  var worker = new Worker('worker.js');
   worker.addEventListener('message', function (e) {
     switch (e.data.type) {
       case 'SET_WINDOW':
@@ -43,7 +38,7 @@
     }
   });
 
-  window.show = function () {
+  window.show = function show() {
     dataset.clear();
     worker.postMessage(nameElement.value);
     return;
